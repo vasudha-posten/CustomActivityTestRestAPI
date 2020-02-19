@@ -1,7 +1,7 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-       "icon": "images/sms.png",
+       "icon": "images/icon.png",
        "category": "message"
     },
     "type": "REST",
@@ -15,11 +15,10 @@
         "execute": {
             "inArguments": [
                 {
-                    "emailAddress": "{{InteractionDefaults.Email}}"
-                },
-                {
-                    "phoneNumber": "{{Contact.Default.PhoneNumber}}"
-                }
+                    "emailAddress": "{{Contract.Attribute.TestCustomActivity.Email}}",
+		            "Name" : "{{Contract.Attribute.TestCustomActivity.Name}}",
+		            "Contactkey": "{{Contract.Attribute.TestCustomActivity.ContactId}}"
+                }		
             ],
             "outArguments": [
                 {
@@ -30,6 +29,7 @@
         }
     },
     "configurationArguments": {
+        
        "save": {
            "url": "URI/for/your/activity/save"
        },
@@ -87,4 +87,4 @@
             }
         }
     }
-}   
+}
